@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript" src="angular.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		"use strict"
+		var app=angular.module("contact",[]);
+		app.controller("manage",function($scope){
+			$scope.collect="";
+/*			if($scope.password!=$scope.repassword)
+			{
+				alert("Pakodi");
+			}
+			else if($scope.repassword=null)
+			{
+				alert("Goli");
+			}*/
+		});
+	</script>
+</head>
+<body ng-app="contact" ng-controller="manage">
+	<div class="container">
+		<div class="row form_row">
+			<div class="col-md-4 form_col"></div>
+			<div class="col-md-4">
+				<form method="post" name="loginform" action="concheck.php" novalidate>
+					<div><h2>Login Form</h2></div>
+					<div>
+						<label class="labelname">Email:</label>
+						<input class="form-control" type="text" name="email" ng-model="email" ng-pattern="/^[A-Za-z_]\w+@inmar\.com$/">
+						<span ng-show="loginform.email.$error.pattern">Enter valid Email</span>
+					</div>
+					<div>
+						<label class="labelname">Password:</label>
+						<input class="form-control" type="password" name="password" ng-model="password" maxlength="20" ng-minlength="8">
+						<span ng-show="loginform.password.$error.pattern">Not a strong password</span>
+						<span ng-show="loginform.password.$error.minlength">Password is too short</span>
+					</div>
+					    <input type="checkbox" name="rememberme" ng-model="rememberme"> Remember me</input>
+					    <button type="submit" ng-disabled="loginfrom.$invalid" class="btn btn-success"><span class="glyphicon glyphicon-log-in"></span> Login</button> 
+				</form>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+	</div>
+</body>
+</html>
