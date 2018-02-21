@@ -30,13 +30,16 @@ step 1: Open the index file in the web browser(eg: localhost/rootfolder/filename
 
 step 1: If the user is new, the user will first register and then will login. If the user is already existing user,the user can directly login.  
 step 2: After the successful login, the page will redirect to the contacts.html page.
-step 3: Click the plus button to create a new group (created groups are displayed in the page) it fires the @group_create.php file and stores the details in the  the @group_inf table and display the required details in the corresponding page by firing @send_group_info.php file. 
-step 4: The Plus is used to add contacts to the group.
-step 5: The user can view the members of the group by clicking the 'view'.  
-step 6: In a particular group, the user can edit a contact's 'name' and 'phone number'.
-step 7: The user can also delete the contact using delete.
-step 8: THe user can add the contact using the plus button displayed on top-right corner.
-step 9: The user can logout after performing all the operations.
+step 3: Click the plus button to create a new group and the created group is updated here automatically.
+step 4: Editing the group name functionality is there also, can use it by clicking the eidt icon.
+step 5: The Plus is used to add contacts to the group.
+step 6: The user can view the members of the group by clicking the 'view'.  
+step 7: In a particular group, the user can edit a contact's 'name' and 'phone number'.
+step 8: The user can also delete the contact using delete.
+step 9: The user can add the contact using the plus button displayed on top-right corner.
+step 10: The user can see all the contacts in his account by clicking on contacs in the navigation bar.
+step 11: There is also edit and delete options for editing and deleting contacts.
+step 12: The user can logout after performing all the operations.
 ````
 
 
