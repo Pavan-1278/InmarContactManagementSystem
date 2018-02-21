@@ -528,7 +528,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#" ng-click="onpageload()">Groups</a></li>
-        <li><a href="#" id="showContacts" ng-click="showContacts()">Contacts</a></li>      
+        <li><a href="#" id="showContacts" ng-click="showContacts()">All Contacts</a></li>      
       </ul>
       <ul class="nav navbar-nav navbar-right">
             <li ><a href="#"><label>Welcome:<span class="glyphicon glyphicon-user"></span>
