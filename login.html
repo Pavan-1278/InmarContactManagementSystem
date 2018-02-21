@@ -9,6 +9,24 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
+		
+		(function(){
+            var c=document.cookie;
+            var mytest1=c.split(';');
+          // console.log(document.cookie);
+            var check=document.cookie;
+            var i=mytest1[0].search("=");
+            i=i+1;
+            if(mytest1[0].charAt(i)=="x")
+            {
+            	window.location.assign("index.php");	
+            }
+            else
+            {
+              
+            }
+     }());
+
 		"use strict"
 		var app=angular.module("contact",[]);
 		app.controller("manage",function($scope){
