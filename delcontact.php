@@ -1,7 +1,7 @@
 <?php
-$grp_id=$_POST['gid'];
-$uemail=$_POST['owner_email'];
-$cemail=$_POST['con_email'];
+	$grp_id=$_POST['gid'];
+	$uemail=$_COOKIE['username'];
+	$cemail=$_POST['con_email'];
 	$conn = new mysqli('localhost', 'root', '', 'project');
 	// Check connection
 	//echo "Hai in database";

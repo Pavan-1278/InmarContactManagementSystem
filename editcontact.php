@@ -2,7 +2,7 @@
 	$cname=$_POST['cname'];
 	$c_phno=$_POST['c_phno'];
 	$cemail=$_POST['con_email'];
-	$uemail=$_POST['owner_email'];
+	$uemail=$_COOKIE['username'];
 	$gid=$_POST['g_id'];
 	$conn = new mysqli('localhost', 'root', '', 'project');
 	// Check connection

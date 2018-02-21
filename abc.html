@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complaint-Box</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <style type="text/css">
+          @font-face 
+        {
+                font-family: 'section-heading';
+                src: url('fonts/opificio_regular-webfont.eot');
+                src: url('fonts/opificio_regular-webfont.eot?#iefix') format('embedded-opentype'),
+                url('fonts/opificio_regular-webfont.woff2') format('woff2'),
+                url('fonts/opificio_regular-webfont.woff') format('woff'),
+                url('fonts/opificio_regular-webfont.ttf') format('truetype'),
+                url('fonts/opificio_regular-webfont.svg#opificioregular') format('svg');
+                font-weight: normal;
+                font-style: normal;
+        }
+        .logo_container
+        {
+            margin-top: 4%;
+        }
+        .title_row  img
+        {
+          display: block;
+          margin: 0px auto;
+        }
+        .title_row h4
+        {
+            text-align: center;
+            font-family:section-heading;
+            font-weight: bold; 
+        }
+        .title_row a
+        {
+            
+            display: block;
+            text-align: center;
+            //font-family:section-heading;
+            //margin: 0px auto;
+            font-weight: bold;
+            padding-top: 1%; 
+        }
+    </style>
+</head>
+<body>
+    <?php 
+        unset($_COOKIE["test"]);       
+        setcookie("test","0", time()-3600,"/");    
+        //echo "<h4>Logged Out</h4>";
+        //echo "<a href='adminlogin.html'>click here login</a>";
+        //$_COOKIE["test"]="0";
+        /*if(!isset($_COOKIE["test"]))
+        {
+            echo "cookie is not set";
+        }
+        else 
+        {
+            //echo "Cookie '" . $cookie_name . "' is set!<br>";
+            //echo "Value is: " . $_COOKIE["test"];
+            header("Location:demo.html");
+        }*/
+    ?>   
+     <div class="container logo_container">
+          <div class="row title_row">
+              <div class="col-md-12">
+                  <a href="home.html"><img src="image/complaintbox.jpeg" width="250" height="180"></a>
+                  <?php
+   					 //$username=$_POST['uname'];
+    				// Create connection
+    				$student_id=$_POST['studentid'];
+    				$student_name=$_POST['studentname'];
+    				$student_password=$_POST['pword'];
+    				$student_email=$_POST['email'];    
+    				$conn = new mysqli('localhost', 'root', '', 'complaint');
+    				// Check connection
+    				if ($conn->connect_error) 
+    				{
+       					die("Connection failed: " . $conn->connect_error);
+    				} 
+    				$sql = "insert into student_info values('$student_id','$student_name','$student_password','$student_email')";
+    				$result = $conn->query($sql);
+    				if($result==true)
+    				{
+    					echo "<h4>user created successfully</h4>";	
+    				}	
+    				else
+    				{
+    					echo "<h4>Registration failed</h4>";	
+    				}	
+    				
+				 ?>
+                 <a href='studentlogin.html'>click here login</a>
+                 <a href='home.html'>------- go to home page -------</a>
+              </div>
+          </div>
+     </div>   
+</body>
+</html>

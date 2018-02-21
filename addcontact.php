@@ -3,7 +3,7 @@ $name=$_POST['cname'];
 $cemail=$_POST['con_email'];
 $phnno=$_POST['c_phno'];
 $g_id=$_POST['g_id'];
-$uemail=$_POST['owner_email'];
+$uemail=$_COOKIE['username'];
 //creating a connection to database
 $conn=new mysqli("localhost","root","","project");
 //check connection

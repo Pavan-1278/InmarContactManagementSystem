@@ -43,7 +43,7 @@ if(!$conn)
    }
    else
    {
-    echo "Try login again";
+    header("Location:login.html");
    	  //  header("Location:login2.html");
    }
  }

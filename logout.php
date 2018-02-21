@@ -1,13 +1,12 @@
-<?php 
-     
-     $p1=$_GET['p1'];
-     $p2=$_GET['p2'];  
-     $p1=trim($p1);   
-     $p2=trim($p2);   
-    unset($_COOKIE[$p1]);       
-     unset($_COOKIE[$p2]);
-     setcookie($p1,"0", time()-3600,"/");        
-    setcookie($p2,"0", time()-3600,"/");    
+<?php    
+  $p1=$_GET['p1'];
+  $p2=$_GET['p2'];  
+  $p1=trim($p1);   
+  $p2=trim($p2);   
+  unset($_COOKIE[$p1]);       
+  unset($_COOKIE[$p2]);
+  setcookie($p1,"0", time()-3600,"/");        
+  setcookie($p2,"0", time()-3600,"/");    
 ?>   
 <html>
 <head>
@@ -71,16 +70,10 @@ button:hover {
     text-align: center;
     margin: 2px 0 10px 50px;
 }
-
-
-
-
-
 span.psw {
     float: right;
     padding-top: 16px;
 }
-
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
     span.psw {
@@ -94,7 +87,7 @@ span.psw {
 </style>
 <body>
 <div class="container">
-<div class="row logout" align="center"><h1>You are logged out</h1></div>
+<!--<div class="row logout" align="center"><h1>You are logged out</h1></div>-->
 <div class="row">
 <div class="col-xs-2"></div>
 <div class="col-xs-8">
