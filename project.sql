@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 20, 2018 at 06:46 PM
+-- Generation Time: Feb 21, 2018 at 09:08 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -39,10 +39,21 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`name`, `phno`, `uemail`, `cemail`, `grp_id`) VALUES
-('ahmed123', 7589641230, 'ram@inmar.com', 'ahmed@inmar.com', 1111),
-('naresh', 7485912360, 'ram@inmar.com', 'naresh@inmar.com', 1111),
-('pavan', 9063251066, 'ram@inmar.com', 'pavan@inmar.com', 1111),
-('suresh', 5749354931, 'ram@inmar.com', 'suresh@inmar.com', 1111);
+('ahmed', 9874563210, 'ram@inmar.com', 'ahmed@inmar.com', 1234),
+('anand', 5896412300, 'ram@inmar.com', 'anand@inmar.com', 1456),
+('aravind', 3256987410, 'Pavan@inmar.com', 'aravind@inmar.com', 4569),
+('Deekshith', 1256347890, 'ram@inmar.com', 'e@inmar.com', 4568),
+('Havinash', 7895426310, 'ram@inmar.com', 'hainash@inmar.com', 1456),
+('Kanish', 4565987412, 'ram@inmar.com', 'kanish@inmar.com', 1234),
+('kartheeka', 3216549807, 'Pavan@inmar.com', 'kartheeka@inmar.com', 9874),
+('karthik', 7458961023, 'Pavan@inmar.com', 'karthik@Inmar.com', 9874),
+('kavisha', 9874563210, 'ram@inmar.com', 'kavisha@inmar.com', 1456),
+('krish', 854719630, 'Pavan@inmar.com', 'krish@Inmar.com', 9874),
+('Kumar', 9874586321, 'ram@inmar.com', 'kumar@inmar.com', 1234),
+('muneer', 7845961203, 'Pavan@inmar.com', 'muneer@inmar.com', 4569),
+('payal', 9845632107, 'Pavan@inmar.com', 'payal@inmar.com', 4569),
+('prameel', 9874512630, 'ram@inmar.com', 'prameel@inmar.com', 4568),
+('Praveen', 7845651230, 'ram@inmar.com', 'praveen@inmar.com', 4568);
 
 -- --------------------------------------------------------
 
@@ -61,14 +72,11 @@ CREATE TABLE `group_inf` (
 --
 
 INSERT INTO `group_inf` (`owner_email`, `group_id`, `group_name`) VALUES
-('ram@inmar.com', '1201', 'facebook'),
-('ram@inmar.com', '1202', 'information technology'),
-('ram@inmar.com', '1203', '10th'),
-('ram@inmar.com', '1204', 'college'),
-('ram@inmar.com', '1205', 'inmar'),
-('ram@inmar.com', '1206', 'microsoft'),
-('ram@inmar.com', '1230', 'IBM'),
-('ram@inmar.com', '99912', 'cse');
+('ram@inmar.com', '1234', 'Inmar'),
+('ram@inmar.com', '1456', 'Btech'),
+('ram@inmar.com', '4568', 'Tech_team'),
+('Pavan@inmar.com', '4569', 'Inmar'),
+('Pavan@inmar.com', '9874', 'Vijayawada');
 
 -- --------------------------------------------------------
 
