@@ -22,7 +22,7 @@ step 3: Place the source files in the htdocs folder which present inside the xam
 `````
 ### How to run 
 ````
-````
+
 step 1: Open the index file in the web browser(eg: localhost/rootfolder/filename)
 ````
 ### working procedure
@@ -37,7 +37,6 @@ step 6: In a particular group, the user can edit a contact's 'name' and 'phone n
 step 7: The user can also delete the contact using delete.
 step 8: THe user can add the contact using the plus button displayed on top-right corner.
 step 9: The user can logout after performing all the operations.
-
 ````
 
 
