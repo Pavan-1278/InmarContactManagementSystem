@@ -15,14 +15,20 @@
 		var app=angular.module("contact",[]);
 		app.controller("manage",function($scope){
 			$scope.collect="";
+			$scope.checkpassword=function(){
+				alert(password);
+				alert($scope.password);
+				alert(repassword);
+				alert($scope.repassword);
 /*			if($scope.password!=$scope.repassword)
-			{
-				alert("Pakodi");
-			}
-			else if($scope.repassword=null)
-			{
-				alert("Goli");
-			}*/
+ 				{
+					regform.confirm.$dirty=true;
+				}
+			else
+				{
+					regform.confirm.$dirty=false;
+				}*/
+			};
 		});
 	</script>
 </head>
@@ -49,22 +55,22 @@
 					<div>
 						<label class="labelname">Email:</label>
 						<label class="req">*</label>
-						<input class="form-control" type="text" name="email" ng-model="email" ng-pattern="/^[A-Za-z_]\w+@inmar\.com$/">
+						<input class="form-control" type="text" name="email" ng-model="email" ng-pattern="/^[A-Za-z]\w+@inmar\.com$/">
 						<span ng-show="regform.email.$error.pattern">Enter valid Email</span>
 					</div>
 					<div>
 						<label class="labelname">Password:</label>
 						<label class="req">*</label>
-						<input class="form-control" type="password" name="password" ng-model="password" ng-pattern="/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$%\^&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,16}$/" maxlength="20" ng-minlength="8">
+						<input class="form-control" type="password" name="password" ng-model="password" ng-pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[*&_!@.]).{8,}$/" maxlength="20" ng-minlength="8">
 						<span ng-show="regform.password.$error.pattern"> Not a strong password</span>
 						<span ng-show="regform.password.$error.minlength">Password is too short</span>
 					</div>
-					<div>
+<!--					<div>
 						<label class="labelname">Confirm Password:</label>
 						<label class="req">*</label>
-						<input class="form-control" type="password" name="confirm" ng-model="repassword" maxlength="20" ng-minlength="8">
+						<input class="form-control" type="password" name="confirm" ng-model="repassword" ng-change="checkpassword()">
 						<span ng-show="regform.confirm.$dirty"> Not a strong password</span>
-					</div>
+					</div>-->
 					<div>
 						<label class="labelname">Gender:</label>
 						<label class="req">*</label>
