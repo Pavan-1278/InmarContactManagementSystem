@@ -30,6 +30,54 @@
 				}*/
 			};
 		});
+	        //Function for checking the confirm password
+            app.directive("checkme",function(){
+               return{
+            require:'^form',
+            restrict:'A',                         
+            link:function(scope,element,attrs,forminfo)
+            {
+                      //scope.dim=true;
+                      //console.log(forminfo);
+                      var button_dim_counter=0;
+                      scope.$watch('repassword',function(newval,oldval){
+                      button_dim_counter=button_dim_counter+1;
+                      if(scope.repassword==null)
+                      {
+                         forminfo.$invalid=true;  
+                         element.text("confirm password properly"); 
+                         
+                      } 
+                    else if(scope.password!=scope.repassword)
+                      {
+                            forminfo.$invalid=true;  
+                                  element.text("confirm password properly");
+                    }   
+                      else if(button_dim_counter>1)
+                      {
+                                      forminfo.$invalid=false;  
+                                      element.text("");
+                                      
+                      }          
+                },true)
+                scope.$watch('password',function(newval,oldval){
+                    if(scope.password==null)
+                      {
+                         forminfo.$invalid=true;  
+                         element.text("confirm password properly"); 
+                      } 
+                      else if(scope.password!=scope.repassword)
+                      {
+                                  forminfo.$invalid=true;  
+                                  element.text("confirm password properly");
+                       }   
+                              
+                },true)             //console.log(scope.repassword);                  
+                       
+            }
+          }
+          })
+
 	</script>
 </head>
 <body ng-app="contact" ng-controller="manage">
@@ -62,15 +110,19 @@
 						<label class="labelname">Password:</label>
 						<label class="req">*</label>
 						<input class="form-control" type="password" name="password" ng-model="password" ng-pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[*&_!@.]).{8,}$/" maxlength="20" ng-minlength="8">
+						<details>
+							<summary>Strong Password</summary>
+							<p>Must contain UPPERCASE,lowercase,digit,special character</p>
+						</details>
 						<span ng-show="regform.password.$error.pattern"> Not a strong password</span>
 						<span ng-show="regform.password.$error.minlength">Password is too short</span>
 					</div>
-<!--					<div>
+					<div>
 						<label class="labelname">Confirm Password:</label>
 						<label class="req">*</label>
-						<input class="form-control" type="password" name="confirm" ng-model="repassword" ng-change="checkpassword()">
-						<span ng-show="regform.confirm.$dirty"> Not a strong password</span>
-					</div>-->
+						<input class="form-control" type="password" name="confirm" ng-model="repassword">
+						<span  checkme ng-show="regform.confirm.$dirty"></span>
+					</div>
 					<div>
 						<label class="labelname">Gender:</label>
 						<label class="req">*</label>
